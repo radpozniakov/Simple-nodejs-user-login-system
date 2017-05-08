@@ -1,0 +1,64 @@
+<div class="container">
+
+    <!-- Portfolio Item Heading -->
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">{{mainItem.title}}
+                <small>by / {{mainItem.author}}</small>
+            </h1>
+        </div>
+    </div>
+    <!-- /.row -->
+
+    <!-- Portfolio Item Row -->
+    <div class="row">
+
+        <div class="col-md-8">
+            <img class="img-responsive" src="/uploads/portfolio/{{mainItem.portfolioimage}}" alt="">
+        </div>
+
+        <div class="col-md-4">
+            <h3>Описание проекта</h3>
+            <p>{{mainItem.shorttext}}</p>
+            <h3>Детали проекта</h3>
+            <ul>
+                <li>Автор: <a href="/users/{{mainItem.author}}">{{mainItem.author}}</a></li>
+            </ul>
+        </div>
+
+    </div>
+    <!-- /.row -->
+
+    <!-- Related Projects Row -->
+    <div class="row">
+
+        <div class="col-lg-12">
+            <h3 class="page-header">Другие проекты автора</h3>
+        </div>
+
+        {{#each otherPortfolio}}
+        <div class="col-sm-3 col-xs-6">
+            <a href="/portfolio/single/{{_id}}">
+                <img class="img-responsive portfolio-item" src="/uploads/portfolio/{{portfolioimage}}" alt="">
+            </a>
+            <h4><a href="/portfolio/single/{{_id}}">{{title}}</a></h4>
+            <p>{{shorttext}}</p>
+        </div>
+        {{/each}}
+
+    </div>
+    <!-- /.row -->
+
+    <hr>
+
+    <!-- Footer -->
+    <footer>
+        <div class="row">
+            <div class="col-lg-12">
+                <p>Copyright © Your Website 2014</p>
+            </div>
+        </div>
+        <!-- /.row -->
+    </footer>
+
+</div>

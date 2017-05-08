@@ -1,0 +1,26 @@
+<h1>{{title}}</h1>
+<pre>
+    {{user}}
+</pre>
+<br>
+<form action="/portfolio/add" enctype="multipart/form-data" method="post">
+    <input class="hidden" type="text" name="author" value="{{user.username}}">
+    <div class="form-group">
+        <label for="title">Заголовок:</label>
+        <input type="text" name="title" class="form-control" id="title">
+    </div>
+    <div class="form-group">
+        <label for="shorttext">Краткое описание</label>
+        <textarea class="form-control" name="shorttext" id="shorttext"></textarea>
+    </div>
+    <div class="form-group">
+        <label for="portfolioimage">Картинка портфолио:</label>
+        <input type="file" name="portfolioimage" class="form-control" id="portfolioimage">
+    </div>
+    {{#if errors}}
+        {{#each errors}}
+            <div class="alert alert-danger">{{msg}}</div>
+        {{/each}}
+    {{/if}}
+    <button type="submit" class="btn btn-default">Submit</button>
+</form>

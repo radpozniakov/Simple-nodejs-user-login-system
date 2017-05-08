@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+
+<body>
+<!-- Static navbar -->
+<nav class="navbar navbar-default navbar-static-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a style="line-height: 44px" class="navbar-brand" href="/">NodeJS</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li><a style="line-height: 44px" href="/users">Список пользователей</a></li>
+
+                <li class="dropdown">
+                    <a style="line-height: 44px" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                        Портфолило<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/portfolio">Список всех работ</a></li>
+                        <li><a href="/portfolio/add">Добавить работу</a></li>
+                    </ul>
+                </li>
+
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                {{# if user}}
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            <img style="margin-right: 5px; max-width: 45px;" class="img-circle" src="/uploads/avatars/{{user.profileimage}}">
+                            {{user.name}}<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/users/{{user.username}}">Профиль</a></li>
+                            <li><a href="/users/{{user.username}}/edit">Редактировать</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="/users/logout">Выход</a></li>
+                        </ul>
+                    </li>
+                {{else}}
+                    <li><a style="line-height: 44px" href="/users/add">Регистрация</a></li>
+                    <li><a style="line-height: 44px" href="/users/login">Вход</a></li>
+                {{/if}}
+            </ul>
+
+        </div><!--/.nav-collapse -->
+    </div>
+</nav>
+
+
+<div class="container">
+    {{{body}}}
+</div> <!-- /container -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="/javascripts/bootstrap.min.js"></script>
+</body>
+</html>

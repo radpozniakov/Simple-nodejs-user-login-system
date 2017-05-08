@@ -1,0 +1,48 @@
+<h3>{{title}}</h3>
+<hr>
+
+
+<div class="row">
+
+{{# each portfoliolist}}
+    <div class="col-md-4 portfolio-item">
+        <a href="/portfolio/single/{{_id}}">
+            <img class="img-responsive" src="/uploads/portfolio/{{portfolioimage}}" alt="">
+        </a>
+        <h3>
+            <a href="/portfolio/single/{{_id}}">{{title}}</a>
+        </h3>
+        <p>{{shorttext}}</p>
+    </div>
+{{/each}}
+
+</div>
+<hr>
+<div class="row text-center">
+    <div class="col-lg-12">
+        <ul class="pagination">
+            <li>
+                <a href="#">«</a>
+            </li>
+            <li class="active">
+                <a href="#">1</a>
+            </li>
+            <li>
+                <a href="#">2</a>
+            </li>
+            <li>
+                <a href="#">3</a>
+            </li>
+            <li>
+                <a href="#">4</a>
+            </li>
+            <li>
+                <a href="#">5</a>
+            </li>
+            <li>
+                <a href="#">»</a>
+            </li>
+        </ul>
+    </div>
+</div>
+<hr>

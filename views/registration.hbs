@@ -1,0 +1,37 @@
+<h1>{{title}}</h1>
+<br>
+<form action="/users/add" enctype="multipart/form-data" method="post">
+    <div class="form-group">
+        <label for="name">ФИО:</label>
+        <input type="text" name="name" class="form-control" id="name">
+    </div>
+    <div class="form-group">
+        <label for="email">Email address:</label>
+        <input type="email" name="email" class="form-control" id="email">
+    </div>
+
+    <div class="form-group">
+        <label for="username">Username:</label>
+        <input type="text" name="username" class="form-control" id="username">
+    </div>
+
+    <div class="form-group">
+        <label for="password">Пароль:</label>
+        <input type="password" name="password" class="form-control" id="password">
+    </div>
+
+    <div class="form-group">
+        <label for="password2">Повторите пароль:</label>
+        <input type="password" name="password2" class="form-control" id="password2">
+    </div>
+    <div class="form-group">
+        <label for="profileimage">Profile image:</label>
+        <input type="file" name="profileimage" class="form-control" id="profileimage">
+    </div>
+    {{#if errors}}
+        {{#each errors}}
+            <div class="alert alert-danger">{{msg}}</div>
+        {{/each}}
+    {{/if}}
+    <button type="submit" class="btn btn-default">Submit</button>
+</form>

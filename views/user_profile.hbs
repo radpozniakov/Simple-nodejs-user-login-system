@@ -1,0 +1,31 @@
+<div class="row">
+    <div class="col-md-12">
+        <img src="/uploads/avatars/{{userProfile.profileimage}}" alt="{{userProfile.name}}" style="width: 200px; margin-right: 50px; float: left; border-radius: 50%">
+        <h4>{{userProfile.name}}</h4>
+        <p>{{userProfile.email}}</p>
+    </div>
+</div>
+
+
+<br><br>
+<h3>Портфолио</h3>
+<hr>
+<div class="row text-center">
+
+
+   {{# each portfolio}}
+       <div class="col-md-3 col-sm-6 hero-feature">
+           <div class="thumbnail">
+               <img src="/uploads/portfolio/{{portfolioimage}}" alt="">
+               <div class="caption">
+                   <h3>{{title}}</h3>
+                   <p>{{shorttext}}</p>
+                   <p>
+                       <a href="/portfolio/single/{{_id}}" class="btn btn-primary">Подробнее</a>
+                   </p>
+               </div>
+           </div>
+       </div>
+   {{/each}}
+
+</div>
